@@ -15,10 +15,9 @@
     <div>
       <input
       type="url" 
-      :value="text" 
+      v-model="text" 
       placeholder="Enter the url" 
-      alt="url input"
-      @input="onChange">
+      alt="url input">
     </div>
 
     <div v-if="text" class="output">
@@ -36,11 +35,6 @@
             newQrCode(){
               this.qrcode.value = this.text;
               return this.qrcode.toDataURL();
-            }
-          },
-          methods: {
-            onChange(event) {
-              this.text = event.target.value;
             }
           }
         })
